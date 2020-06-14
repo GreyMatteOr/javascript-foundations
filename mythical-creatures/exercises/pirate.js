@@ -1,11 +1,11 @@
-class Pirate{
-  constructor(name, job = 'scallywag', cursed = false, booty = 0){
+class Pirate {
+  constructor(name, job = 'scallywag', cursed = false, booty = 0) {
     this.name = name
     this.job = job
     this.cursed = cursed
     this.booty = booty
-    }
-  robShip(){
+  }
+  robShip() {
     this.booty += 100
     return 'YAARRR!'
   }

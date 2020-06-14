@@ -4,8 +4,12 @@ class Unicorn {
     this.color = color;
   }
 
-  isWhite(){ return this.color == 'white' }
-  says(str){ return '**;* '+ str +' *;**' }
+  isWhite() {
+    return this.color == 'white'
+  }
+  says(str) {
+    return '**;* ' + str + ' *;**'
+  }
 }
 
 module.exports = Unicorn;
