@@ -1,7 +1,7 @@
 class Magician {
   constructor(args = {}) {
     this.name = (args['name'] == undefined) ? 'Fool' : args.name;
-    this.topHat = (args['topHat'] == undefined)
+    this.topHat = (args['topHat'] == undefined) ? true : args['topHat']
     this.spellCount = 0;
     this.confident = (this.spellCount >= 3);
   }

@@ -4,25 +4,28 @@ var Person = require('../exercises/person');
 
 describe('Medusa', function() {
 
-  it.skip('should be a function', function() {
+  it('should be a function', function() {
     assert.isFunction(Medusa);
   });
 
-  it.skip('should instantiate our good friend, Medusa', function() {
+  it('should instantiate our good friend, Medusa', function() {
     var medusa = new Medusa();
 
     assert.instanceOf(medusa, Medusa);
   });
 
-  it.skip('should have a name', function() {
+  it('should have a name', function() {
+    var deduca = new Medusa('Matthew')
+    var tetwusa = new Medusa('Rebecca')
+
     // instantiate a Medusa object with your name as an argument
     // instantiate another Medusa object with someone else's name as an argument
 
-    // assert that the first medusa's name is your name
-    // assert that the second medusa's name is the other name
+    assert.equal(deduca.name, 'Matthew') // assert that the first medusa's name is your name
+    assert.equal(tetwusa.name, 'Rebecca') // assert that the second medusa's name is the other name
   });
 
-  it.skip('should start with no statues', function() {
+  it('should start with no statues', function() {
     var medusa = new Medusa('Amy');
 
     assert.deepEqual(medusa.statues, []);
@@ -30,7 +33,7 @@ describe('Medusa', function() {
 
   // STOP! Skip down to the bottom of the file and pass first 3 tests for Person down below!
 
-  it.skip('should gain a statue when staring at a person', function() {
+  it('should gain a statue when staring at a person', function() {
     var medusa = new Medusa('Eric');
     var victim = new Person('Robbie');
 
@@ -41,7 +44,7 @@ describe('Medusa', function() {
     assert.equal(medusa.statues[0].name, 'Robbie');
   });
 
-  it.skip('should stone the victim when added to the statues array', function() {
+  it('should stone the victim when added to the statues array', function() {
     var medusa = new Medusa('Eric');
     var victim = new Person('Robbie');
 
@@ -50,7 +53,7 @@ describe('Medusa', function() {
     assert.equal(medusa.statues[0].stoned, true);
   });
 
-  it.skip('should only be able to have three victims as statues', function() {
+  it('should only be able to have three victims as statues', function() {
     var medusa = new Medusa('Hannah');
     var victim1 = new Person('Pam');
     var victim2 = new Person('Khalid');
@@ -65,7 +68,7 @@ describe('Medusa', function() {
     assert.equal(medusa.statues.length, 3);
   });
 
-  it.skip('should let the first victim go free when stoning the 4th', function() {
+  it('should let the first victim go free when stoning the 4th', function() {
     var medusa = new Medusa('Hannah');
     var victim1 = new Person('Pam');
     var victim2 = new Person('Khalid');
@@ -77,7 +80,8 @@ describe('Medusa', function() {
     medusa.stare(victim3);
 
     assert.equal(medusa.statues.length, 3);
-    assert.equal(medusa.statues, [victim1, victim2, victim3]);
+
+    assert.deepEqual(medusa.statues, [victim1, victim2, victim3]);
 
     medusa.stare(victim4);
 
@@ -90,21 +94,21 @@ describe('Medusa', function() {
 
 describe('Person', function() {
 
-  it.skip('should instantiate our good friend, Person', function() {
+  it('should instantiate our good friend, Person', function() {
     var person = new Person();
 
     assert.instanceOf(person, Person);
   });
 
-  it.skip('should have a name', function() {
+  it('should have a name', function() {
     var scott = new Person('Scott');
     var eric = new Person('Eric');
 
-    assert.equal(scott.name, 'Steve');
+    assert.equal(scott.name, 'Scott');
     assert.equal(eric.name, 'Eric');
   });
 
-  it.skip('should be stoned after looking into Medusas eyes', function() {
+  it('should be stoned after looking into Medusas eyes', function() {
     var medusa = new Medusa('Pam');
     var victim = new Person('Khalid');
 
@@ -112,6 +116,6 @@ describe('Person', function() {
 
     medusa.stare(victim);
 
-    assert.equal(victim.stoned, true);
+    assert.equal(victim.ID, medusa.statues[0].ID);
   });
 });
