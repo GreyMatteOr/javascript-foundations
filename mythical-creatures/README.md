@@ -54,4 +54,3 @@ If you've done the creatures above and feel comfortable with those, try conqueri
 #### Practicing new JavaScript features
 
 Notice, some of the syntax with the tests and files are using newer JavaScript features introduced in es6, like arrow functions, block-scoped variables, and classes.  See if you can start flexing your es6 muscles and write your solutions and tests using the new syntax!  
-
