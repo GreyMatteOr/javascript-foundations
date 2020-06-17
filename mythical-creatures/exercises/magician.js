@@ -1,9 +1,9 @@
 class Magician {
   constructor(args = {}) {
-    this.name = (args['name'] == undefined) ? 'Fool' : args.name;
-    this.topHat = (args['topHat'] == undefined) ? true : args['topHat']
-    this.spellCount = 0;
-    this.confident = (this.spellCount >= 3);
+    this.name = args['name'] ? args['name'] : 'Merlin'
+    this.topHat = args['topHat'] == undefined ? true : args['topHat']
+    this.spellCount = args['spellCount'] ? args['spellCount']: 0
+    this.confident = (this.spellCount >= 3)
   }
   incantation(str) {
     this.spellCount++

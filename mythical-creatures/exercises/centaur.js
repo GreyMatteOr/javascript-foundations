@@ -43,6 +43,7 @@ class Centaur {
 
   drinkPotion() {
     if (!this.standing) {
+      ˚
       return 'Not while I\'m laying down!'
     }
     this.cranky = !this.cranky
