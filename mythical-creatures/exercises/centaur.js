@@ -4,21 +4,21 @@ class Centaur {
     this.name = args.name ? args.name : 'Chester'
     this.breed = args.type ? args.type : 'Percheron'
     this.cranky = args.cranky ? args.cranky : false
-    this.standing = args.standing ? args.cranky : true
+    this.standing = args.standing == undefined ? true : args.standing
     this.layingDown = args.layingDown ? args.layingDown : false
     this.count = 0
   }
 
   shoot() {
     this.count++
-    this.cranky = this.count >= 3
-    return this.cranky || this.layingDown ? 'NO!' : 'Twang!!!'
+    this.cranky = (this.count >= 3)
+    return (this.layingDown || this.cranky) ? 'NO!' : 'Twang!!!'
   }
 
   run() {
     this.count++
     this.cranky = this.count >= 3
-    return this.cranky || this.layingDown ? 'NO!' : 'Clop clop clop clop!!!'
+    return (this.cranky || this.layingDown) ? 'NO!' : 'Clop clop clop clop!!!'
   }
 
   layDown() {
@@ -43,11 +43,12 @@ class Centaur {
 
   drinkPotion() {
     if (!this.standing) {
-      ˚
       return 'Not while I\'m laying down!'
     }
     this.cranky = !this.cranky
-    this.count = 0
+    if (!this.cranky) {
+      this.count = 0
+    }
   }
 }
 

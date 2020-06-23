@@ -116,6 +116,6 @@ describe('Person', function() {
 
     medusa.stare(victim);
 
-    assert.equal(victim.ID, medusa.statues[0].ID);
+    assert.equal(victim.stoned, true);
   });
 });

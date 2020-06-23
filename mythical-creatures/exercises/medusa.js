@@ -10,9 +10,6 @@ class Medusa {
       this.statues.shift().release()
     }
   }
-  shareSelf() {
-    console.log(this.statues)
-  }
 }
 
-module.exports = Medusa
+  module.exports = Medusa

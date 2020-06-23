@@ -8,7 +8,7 @@ class Unicorn {
     return this.color == 'white'
   }
   says(str) {
-    return '**;* ' + str + ' *;**'
+    return `**;* ${str} *;**`
   }
 }
 

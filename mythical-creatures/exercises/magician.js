@@ -1,8 +1,9 @@
-class Magician {
+class Magician { //deconstruction undefined amount of arguments javascript the hard parts
   constructor(args = {}) {
+
     this.name = args['name'] ? args['name'] : 'Merlin'
     this.topHat = args['topHat'] == undefined ? true : args['topHat']
-    this.spellCount = args['spellCount'] ? args['spellCount']: 0
+    this.spellCount = args['spellCount'] ? args['spellCount'] : 0
     this.confident = (this.spellCount >= 3)
   }
   incantation(str) {
